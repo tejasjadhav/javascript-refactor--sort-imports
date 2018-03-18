@@ -9,7 +9,7 @@ This extension also installs `import-sort-cli`, `import-sort-style-eslint` and `
 ## Usage
 
 1.  Open the Javascript file in the editor.
-2.  Open the command palette <kbd>Ctrl<kbd>+<kbd>Shift</kbd>+<kbd>P<kbd> and enter _Javascript Refactor: Sort Imports_.
+2.  Open the command palette <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> and enter _Javascript Refactor: Sort Imports_.
 
 ## Change sort style
 
