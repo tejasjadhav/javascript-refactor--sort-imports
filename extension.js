@@ -38,7 +38,8 @@ function sortImports(cliPath) {
   if (
     fileExtension === '.js' ||
     fileExtension === '.jsx' ||
-    fileExtension === '.ts'
+    fileExtension === '.ts' ||
+    fileExtension === '.tsx'
   ) {
     exec(
       cliPath + ' ' + document.fileName + ' --write',
