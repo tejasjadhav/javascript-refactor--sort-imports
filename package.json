@@ -1,7 +1,7 @@
 {
   "name": "javascript-refactor--sort-imports",
   "displayName": "Javascript Refactor: Sort Imports",
-  "description": "Sorts ES5 imports for Javascript files",
+  "description": "Sorts ES6 imports for Javascript files",
   "version": "0.0.1",
   "author": "Tejas Jadhav <developer.tejas.jadhav@gmail.com>",
   "repository":

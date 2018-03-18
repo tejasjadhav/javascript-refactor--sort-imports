@@ -2,7 +2,7 @@
 
 ### This extension is still in alpha.
 
-This extension is for sorting ES5 imports for Javascript files (`.js`, `.jsx`, `.ts`) using [Renke](https://github.com/renke/)'s excellent [import-sort](https://github.com/renke/import-sort/) tool. Sorting happens **in-place** and overwrites the file with sorted imports.
+This extension is for sorting ES6 imports for Javascript files (`.js`, `.jsx`, `.ts`) using [Renke](https://github.com/renke/)'s excellent [import-sort](https://github.com/renke/import-sort/) tool. Sorting happens **in-place** and overwrites the file with sorted imports.
 
 This extension also installs `import-sort-cli`, `import-sort-style-eslint` and `import-sort-parser-babylon` packages as `devDependencies` in the project.
 
