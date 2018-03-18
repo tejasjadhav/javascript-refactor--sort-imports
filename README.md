@@ -1,65 +1,39 @@
-# javascript-refactor--sort-imports README
+# Javascript Refractor: Sort Imports
 
-This is the README for your extension "javascript-refactor--sort-imports". After writing up a brief description, we recommend including the following sections.
+### This extension is still in alpha.
 
-## Features
+This extension is for sorting ES5 imports for Javascript files (`.js`, `.jsx`, `.ts`) using [Renke](https://github.com/renke/)'s excellent [import-sort](https://github.com/renke/import-sort/) tool. Sorting happens **in-place** and overwrites the file with sorted imports.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension also installs `import-sort-cli`, `import-sort-style-eslint` and `import-sort-parser-babylon` packages as `devDependencies` in the project.
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1.  Open the Javascript file in the editor.
+2.  Open the command palette <kbd>Ctrl<kbd>+<kbd>Shift</kbd>+<kbd>P<kbd> and enter _Javascript Refactor: Sort Imports_.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Change sort style
 
-## Requirements
+By default, the sorting happens using `import-sort-style-eslint`. You can choose any [available style on Github](https://github.com/search?q=import-sort-style-&type=Repositories&utf8=%E2%9C%93).
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1.  Install the import style,
 
-## Extension Settings
+```bash
+yarn add -D import-sort-style-<your style>
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+2.  Create an `.importsortrc` file in your project root.
+3.  Add the following lines in `.importsortrc` file,
 
-For example:
+```json
+{
+  ".js, .jsx, .ts": {
+    "style": "<your style>"
+  }
+}
+```
 
-This extension contributes the following settings:
+# Changelog
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+| Version | Description          |
+| ------- | -------------------- |
+| 0.0.1   | First alpha release. |
