@@ -3,6 +3,9 @@
   "displayName": "Javascript Refactor: Sort Imports",
   "description": "Sorts ES5 imports for Javascript files",
   "version": "0.0.1",
+  "author": "Tejas Jadhav <developer.tejas.jadhav@gmail.com>",
+  "repository":
+    "https://github.com/tejasjadhav/javascript-refactor--sort-imports.git",
   "publisher": "developertejasjadhav",
   "engines": {
     "vscode": "^1.21.0"
