@@ -42,17 +42,19 @@ function sortImports(workspacePath, cliPath) {
     fileExtension === '.tsx'
   ) {
     execFile(
-      cliPath, [document.fileName, ' --write'],
+      cliPath, [document.fileName, '--write'],
       { cwd: workspacePath },
       (err, stdout, stderr) => {
         let errorMessage = '';
 
         if (err) {
           errorMessage = err.toString();
+          console.error(err);
         }
 
         if (stderr) {
           errorMessage = stderr.toString();
+          console.error(stderr);
         }
 
         if (errorMessage.length > 0) {
