@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const vscode = require('vscode');
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
 
 /**
  * Installs import-sort-cli, import-sort-style-eslint and import-sort-parser-babylon using VSCode's
@@ -23,7 +23,7 @@ function installImportSortCli() {
  *
  * @param {string} cliPath Complete path for import-sort CLI executable.
  */
-function sortImports(cliPath) {
+function sortImports(workspacePath, cliPath) {
   const textEditor = vscode.window.activeTextEditor;
 
   // No active editors open. Do nothing.
@@ -41,8 +41,9 @@ function sortImports(cliPath) {
     fileExtension === '.ts' ||
     fileExtension === '.tsx'
   ) {
-    exec(
-      cliPath + ' ' + document.fileName + ' --write',
+    execFile(
+      cliPath, [document.fileName, ' --write'],
+      { cwd: workspacePath },
       (err, stdout, stderr) => {
         let errorMessage = '';
 
@@ -85,7 +86,7 @@ function activate(context) {
 
       try {
         fs.accessSync(cliPath);
-        sortImports(cliPath);
+        sortImports(workspacePath, cliPath);
       } catch (err) {
         console.warn(
           '`import-sort` executable not found in `node_modules` in current workspace.'
