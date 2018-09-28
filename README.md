@@ -34,7 +34,10 @@ yarn add -D import-sort-style-<your style>
 
 # Changelog
 
-| Version | Description               |
-| ------- | ------------------------- |
-| 0.0.1   | First alpha release.      |
-| 0.0.2   | Added support for `.tsx`. |
+| Version | Description                                 |
+| ------- | ------------------------------------------- |
+| 0.0.1   | First alpha release.                        |
+| 0.0.2   | Added support for `.tsx`.                   |
+| 0.0.3   | Added support for latest `import-sort-cli`. |
+| 0.0.4   | Fixed bugs in previous release.             |
+| 0.0.5   | Fixed NPM security vulnerabilities.         |
