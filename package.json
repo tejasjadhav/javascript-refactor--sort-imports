@@ -4,14 +4,17 @@
   "description": "Sorts ES6 imports for Javascript files",
   "version": "0.0.4",
   "author": "Tejas Jadhav <developer.tejas.jadhav@gmail.com>",
-  "repository":
-    "https://github.com/tejasjadhav/javascript-refactor--sort-imports.git",
+  "repository": "https://github.com/tejasjadhav/javascript-refactor--sort-imports.git",
   "publisher": "developertejasjadhav",
   "engines": {
     "vscode": "^1.21.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onCommand:extension.sortImports"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.sortImports"
+  ],
   "main": "./extension",
   "contributes": {
     "commands": [
@@ -26,10 +29,10 @@
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.6",
-    "eslint": "^4.11.0",
+    "@types/mocha": "^2.2.42",
     "@types/node": "^7.0.43",
-    "@types/mocha": "^2.2.42"
+    "eslint": "^4.11.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.21"
   }
 }
