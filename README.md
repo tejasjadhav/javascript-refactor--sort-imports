@@ -73,10 +73,11 @@ By default, the sorting happens using `import-sort-style-eslint`. You can choose
 
 # Changelog
 
-| Version | Description                                 |
-| ------- | ------------------------------------------- |
-| 0.0.1   | First alpha release.                        |
-| 0.0.2   | Added support for `.tsx`.                   |
-| 0.0.3   | Added support for latest `import-sort-cli`. |
-| 0.0.4   | Fixed bugs in previous release.             |
-| 0.0.5   | Fixed NPM security vulnerabilities.         |
+| Version | Description                                    |
+| ------- | ---------------------------------------------- |
+| 0.0.1   | First alpha release.                           |
+| 0.0.2   | Added support for `.tsx`.                      |
+| 0.0.3   | Added support for latest `import-sort-cli`.    |
+| 0.0.4   | Fixed bugs in previous release.                |
+| 0.0.5   | Fixed NPM security vulnerabilities.            |
+| 0.0.6   | Added "Install CLI using Yarn" option.         |
