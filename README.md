@@ -8,7 +8,7 @@ This extension also installs `import-sort-cli` and `import-sort-style-eslint` pa
 
 ## Installation
 
-1. Open the file palette <kbd>Ctrl<kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>P</kbd> on Mac) and enter the following command,
+1. Open the file palette <kbd>Ctrl</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>P</kbd> on Mac) and enter the following command,
 
     ```bash
     ext install developertejasjadhav.javascript-refactor--sort-imports
