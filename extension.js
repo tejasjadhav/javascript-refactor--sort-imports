@@ -79,7 +79,7 @@ function sortImports(workspacePath, cliPath) {
 }
 
 function activate(context) {
-  let disposable = vscode.commands.registerCommand(
+  let disposable = vscode.commands.registerTextEditorCommand(
     'extension.sortImports',
     function() {
       const workspaceFolders = vscode.workspace.workspaceFolders;
@@ -94,7 +94,10 @@ function activate(context) {
 
       const currentWorkspaceFolder = workspaceFolders[0];
       const workspacePath = currentWorkspaceFolder.uri.fsPath;
-      const cliPath = path.join(workspacePath, 'node_modules/.bin/import-sort');
+      const cliPath = path.join(
+        workspacePath,
+        'node_modules/.bin/import-sort'
+      );
 
       try {
         fs.accessSync(cliPath);
@@ -104,7 +107,11 @@ function activate(context) {
           '`import-sort` executable not found in `node_modules` in current workspace.'
         );
         vscode.window
-          .showInformationMessage('import-sort CLI not found', 'Install CLI using NPM', 'Install CLI using Yarn')
+          .showInformationMessage(
+            'import-sort CLI not found',
+            'Install CLI using NPM',
+            'Install CLI using Yarn'
+          )
           .then(action => {
             let packageManager = '';
             switch (action) {
