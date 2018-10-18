@@ -4,16 +4,26 @@ const vscode = require('vscode');
 const { execFile } = require('child_process');
 
 /**
- * Installs import-sort-cli, import-sort-style-eslint and import-sort-parser-babylon using VSCode's
- * integrated terminal.
+ * Installs import-sort-cli and import-sort-style-eslint using VSCode's integrated terminal.
  */
-function installImportSortCli() {
+function installImportSortCli(packageManager) {
   const terminal = vscode.window.createTerminal('Install import-sort-cli');
+  const packages = ['import-sort-cli', 'import-sort-style-eslint'];
+  let installCommand = '';
 
   terminal.show();
-  terminal.sendText(
-    'npm install --save-dev import-sort-cli import-sort-parser-babylon import-sort-style-eslint'
-  );
+
+  switch (packageManager) {
+    case 'npm':
+      installCommand = 'npm install --save-dev';
+      break;
+
+    case 'yarn':
+      installCommand = 'yarn add --dev';
+      break;
+  }
+
+  terminal.sendText(installCommand + ' ' + packages.join(' '));
 }
 
 /**
@@ -94,11 +104,20 @@ function activate(context) {
           '`import-sort` executable not found in `node_modules` in current workspace.'
         );
         vscode.window
-          .showInformationMessage('import-sort CLI not found', 'Install CLI')
+          .showInformationMessage('import-sort CLI not found', 'Install CLI using NPM', 'Install CLI using Yarn')
           .then(action => {
-            if (action === 'Install CLI') {
-              installImportSortCli();
+            let packageManager = '';
+            switch (action) {
+              case 'Install CLI using NPM':
+                packageManager = 'npm';
+                break;
+
+              case 'Install CLI using Yarn':
+                packageManager = 'yarn';
+                break;
             }
+
+            installImportSortCli(packageManager);
           });
       }
     }
